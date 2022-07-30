@@ -1,1 +1,2 @@
 # MINI-OSU!
+![](icon.png)
