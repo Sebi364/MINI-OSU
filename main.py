@@ -9,6 +9,7 @@ from scipy import interpolate
 ################################################################################
 #Display
 RESOLUTION = (1920, 1200)
+USE_FULLSCREEN = False
 #Circle settings
 INNER_CIRCLE_RADIUS = 60
 INNER_CIRCLE_WIDTH = 10
@@ -369,7 +370,11 @@ delta = time.time() - last_delta
 last_delta = time.time()
 runtime = time.time() - starttime
 
-screen = pygame.display.set_mode(RESOLUTION,pygame.FULLSCREEN)
+if USE_FULLSCREEN:
+    screen = pygame.display.set_mode(RESOLUTION,pygame.FULLSCREEN)
+else:
+    screen = pygame.display.set_mode(RESOLUTION)
+
 for x in range(OBJECTS_FROM_FUTURE+1):
     generate_object()
 
